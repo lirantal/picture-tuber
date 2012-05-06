@@ -6,6 +6,14 @@ var argv = require('optimist')
     .argv
 ;
 var tube = require('../')(argv);
+var request = require('request');
 var fs = require('fs');
-fs.createReadStream(argv._[0]).pipe(tube);
+
+var file = argv._[0];
+if (/^https?:/.test(file)) {
+    request(file).pipe(tube);
+}
+else {
+    fs.createReadStream(file).pipe(tube);
+}
 tube.pipe(process.stdout);
