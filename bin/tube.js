@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var argv = require('optimist')
-    .usage('Usage: picture-tube OPTIONS file')
+    .usage('Usage: picture-tube OPTIONS { file or uri }')
     .demand(1)
     .describe('cols', 'number of columns to use for output')
     .argv
