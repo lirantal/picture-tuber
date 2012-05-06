@@ -23,7 +23,6 @@ var fs = require('fs');
 fs.createReadStream('robot.png').pipe(tube);
 ```
 
-
 usage
 =====
 
