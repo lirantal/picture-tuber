@@ -15,7 +15,12 @@ code
 ----
 
 ``` js
-var tube = require('picture-tube')
+var pictureTube = require('picture-tube')
+var tube = pictureTube();
+tube.pipe(process.stdout);
+
+var fs = require('fs');
+fs.createReadStream('robot.png').pipe(tube);
 ```
 
 
@@ -35,11 +40,6 @@ methods
 
 ``` js
 var pictureTube = require('picture-tube');
-var tube = pictureTube();
-tube.pipe(process.stdout);
-
-var fs = require('fs');
-fs.createReadStream('robot.png').pipe(tube);
 ```
 
 var tube = pictureTube(opts)
