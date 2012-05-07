@@ -34,12 +34,17 @@ module.exports = function (opts) {
             
             for (var y = 0; y < png.height; y += dy) {
                 for (var x = 0; x < png.width; x += dx) {
-                    var i = (Math.floor(y) * png.height + Math.floor(x)) * 4;
+                    var i = (Math.floor(y) * png.width + Math.floor(x)) * 4;
                     
                     var ix = x256([ pixels[i], pixels[i+1], pixels[i+2] ]);
-                    charm.background(ix).write(' ');
+                    if (pixels[i+3] > 0) {
+                        charm.background(ix).write(' ');
+                    }
+                    else {
+                        charm.display('reset').write(' ');
+                    }
                 }
-                charm.write('\n');
+                charm.display('reset').write('\r\n');
             }
             
             charm.display('reset');
