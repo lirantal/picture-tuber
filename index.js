@@ -30,7 +30,7 @@ module.exports = function (opts) {
         var png = new PNG(bufs.slice());
         png.decode(function (pixels) {
             var dx = png.width / opts.cols;
-            var dy = 2 * dx * png.height / png.width;
+            var dy = 2 * dx;
             
             for (var y = 0; y < png.height; y += dy) {
                 for (var x = 0; x < png.width; x += dx) {
