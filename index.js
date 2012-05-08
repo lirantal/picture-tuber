@@ -49,6 +49,7 @@ module.exports = function (opts) {
             
             charm.display('reset');
             out.emit('end');
+            s.emit('end');
         });
     };
     
