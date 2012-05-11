@@ -1,7 +1,8 @@
 var PNG = require('png-js');
-var charmer = require('charm');
+var charm = require('charm');
 var x256 = require('x256');
 var buffers = require('buffers');
+var es = require('event-stream');
 
 var Stream = require('stream').Stream;
 
@@ -9,25 +10,13 @@ module.exports = function (opts) {
     if (!opts) opts = {};
     if (!opts.cols) opts.cols = 80;
     
-    var s = new Stream;
-    s.readable = true;
-    s.writable = true;
-    
-    var out = new Stream;
-    out.writable = true;
-    out.write = function (buf) { s.emit('data', buf) };
-    out.end = function () { s.emit('end') };
-    
-    var charm = charmer(out);
-    
+    var c = charm();
     var bufs = buffers();
-    s.write = function (buf) {
-        if (typeof buf === 'string') buf = new Buffer(buf);
-        bufs.push(buf);
-    };
     
-    s.destroy = s.end = function () {
-        var png = new PNG(bufs.slice());
+    var ws = es.writeArray(function (err, bufs) {
+        var data = buffers(bufs).slice();
+        var png = new PNG(data);
+        
         png.decode(function (pixels) {
             var dx = png.width / opts.cols;
             var dy = 2 * dx;
@@ -38,20 +27,18 @@ module.exports = function (opts) {
                     
                     var ix = x256([ pixels[i], pixels[i+1], pixels[i+2] ]);
                     if (pixels[i+3] > 0) {
-                        charm.background(ix).write(' ');
+                        c.background(ix).write(' ');
                     }
                     else {
-                        charm.display('reset').write(' ');
+                        c.display('reset').write(' ');
                     }
                 }
-                charm.display('reset').write('\r\n');
+                c.display('reset').write('\r\n');
             }
             
-            charm.display('reset');
-            out.emit('end');
-            s.emit('end');
+            c.display('reset').end();
         });
-    };
+    });
     
-    return s;
+    return es.duplex(ws, c);
 };
