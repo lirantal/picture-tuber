@@ -13,6 +13,9 @@ var file = argv._[0];
 if (/^https?:/.test(file)) {
     request(file).pipe(tube);
 }
+else if (file === '-') {
+    process.stdin.pipe(tube)
+}
 else {
     fs.createReadStream(file).pipe(tube);
 }
