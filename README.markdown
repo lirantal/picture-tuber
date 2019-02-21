@@ -11,7 +11,7 @@ Render images on the terminal.
 ## code
 
 ```js
-var pictureTube = require("picture-tube");
+var pictureTube = require("picture-tuber");
 var tube = pictureTube();
 tube.pipe(process.stdout);
 
@@ -31,7 +31,7 @@ Options:
 # methods
 
 ```js
-var pictureTube = require("picture-tube");
+var pictureTube = require("picture-tuber");
 ```
 
 ## var tube = pictureTube(opts)
