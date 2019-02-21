@@ -1,4 +1,4 @@
-# picture-tube
+# picture-tuber
 
 Render images on the terminal.
 
