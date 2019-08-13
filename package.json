@@ -22,7 +22,7 @@
     "charm": "~0.1.0",
     "png-js": "~0.1.0",
     "x256": "~0.0.1",
-    "optimist": "~0.3.4"
+    "optimist": "~0.6.1"
   },
   "devDependencies": {},
   "engines": {
