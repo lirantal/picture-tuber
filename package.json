@@ -17,7 +17,7 @@
     "ansi"
   ],
   "dependencies": {
-    "event-stream": "~0.10.0",
+    "event-stream": "~4.0.1",
     "buffers": "~0.1.1",
     "charm": "~0.2.1",
     "png-js": "~0.1.0",
