@@ -19,7 +19,7 @@
   "dependencies": {
     "event-stream": "~0.10.0",
     "buffers": "~0.1.1",
-    "charm": "~0.2.1",
+    "charm": "~1.0.2",
     "png-js": "~1.0.0",
     "x256": "~0.0.1",
     "optimist": "~0.6.1"
