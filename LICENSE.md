@@ -1,6 +1,7 @@
 MIT License
 
 Copyright (c) 2012 James Halliday
+
 Copyright (c) 2019 Liran Tal
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
