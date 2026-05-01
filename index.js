@@ -17,7 +17,7 @@ class PictureTube extends Duplex {
     });
 
     this.c.on("end", () => {
-      this.emit("end");
+      this.push(null);
     });
   }
 
