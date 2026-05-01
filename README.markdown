@@ -6,7 +6,7 @@ Render images on the terminal.
 
 ## command
 
-![picture tube robot](http://substack.net/images/screenshots/picture_tube_robot_avatar.png)
+<img width="1094" height="694" alt="image" src="https://github.com/user-attachments/assets/450e745e-1ac0-4144-89fa-51e04422c81d" />
 
 ## code
 
