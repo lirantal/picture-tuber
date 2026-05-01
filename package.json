@@ -17,8 +17,6 @@
     "ansi"
   ],
   "dependencies": {
-    "event-stream": "~0.10.0",
-    "buffers": "~0.1.1",
     "charm": "~1.0.2",
     "png-js": "~1.0.0",
     "x256": "~0.0.2",
@@ -26,7 +24,7 @@
   },
   "devDependencies": {},
   "engines": {
-    "node": ">=0.4.0"
+    "node": ">=8.0.0"
   },
   "license": "MIT",
   "author": {
