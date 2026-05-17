@@ -60,3 +60,7 @@ npm install -g picture-tuber
 # license
 
 MIT
+
+## Contributing
+
+Please consult [CONTRIBUTING](./CONTRIBUTING.md) for guidelines on contributing to this project.
