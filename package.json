@@ -1,8 +1,4 @@
 {
-  "publishConfig": {
-    "provenance": true,
-    "access": "public"
-  },
   "name": "picture-tuber",
   "description": "render 256 color images on the terminal",
   "version": "2.0.0",
@@ -34,5 +30,9 @@
   "author": {
     "name": "Liran Tal",
     "email": "liran.tal@gmail.com"
+  },
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
   }
 }
